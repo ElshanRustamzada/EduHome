@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EduHome.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHome.DAL
 {
@@ -8,5 +9,12 @@ namespace EduHome.DAL
         {
             
         }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<About> About { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+
     }
 }
