@@ -2,72 +2,35 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model HomeVM
+
 <!-- Background Area Start -->
 <section id="slider-container" class="slider-area two">
     <div class="slider-owl owl-theme owl-carousel">
-        <!-- Start Slingle Slide -->
-        <div class="single-slide item" style="background-image: url(../img/slider/slider2.jpg)">
-            <!-- Start Slider Content -->
-            <div class="slider-content-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="slide-content-wrapper">
-                                <div class="slide-content text-center">
-                                    <h2>EDUCATION MAKES HUMANITY </h2>
-                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and prsing pain was born and I will give you a complete account of the system  </p>
-                                    <a class="default-btn" href="about.html">Learn more</a>
+      @foreach (Slider slider in Model.Sliders)
+        {
+            <!-- Start Slingle Slide -->
+            <div class="single-slide item" style="background-image: url(../img/slider/@slider.Image)">
+                <!-- Start Slider Content -->
+                <div class="slider-content-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="slide-content-wrapper">
+                                    <div class="slide-content text-center">
+                                        <h2>@slider.Name </h2>
+                                        <p>@slider.Description </p>
+                                        <a class="default-btn" href="about.html">Learn more</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Start Slider Content -->
             </div>
-            <!-- Start Slider Content -->
-        </div>
-        <!-- End Slingle Slide -->
-        <!-- Start Slingle Slide -->
-        <div class="single-slide item" style="background-image: url(../img/slider/slider3.jpg)">
-            <!-- Start Slider Content -->
-            <div class="slider-content-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="slide-content-wrapper">
-                                <div class="slide-content text-center">
-                                    <h2>EDUCATION MAKES HUMANITY </h2>
-                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and prsing pain was born and I will give you a complete account of the system  </p>
-                                    <a class="default-btn" href="about.html">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Start Slider Content -->
-        </div>
-        <!-- End Slingle Slide -->
-        <!-- Start Slingle Slide -->
-        <div class="single-slide item" style="background-image: url(../img/slider/slider1.jpg)">
-            <!-- Start Slider Content -->
-            <div class="slider-content-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="slide-content-wrapper">
-                                <div class="slide-content text-center">
-                                    <h2>EDUCATION MAKES HUMANITY </h2>
-                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and prsing pain was born and I will give you a complete account of the system  </p>
-                                    <a class="default-btn" href="about.html">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Start Slider Content -->
-        </div>
-        <!-- End Slingle Slide -->
+            <!-- End Slingle Slide -->
+        }
     </div>
 </section>
 <!-- Background Area End -->
@@ -75,24 +38,16 @@
 <div class="service-area two pt-150 pb-150">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-service">
-                    <h3><a href="teacher.html">PROFESSIONAL TEACHER</a></h3>
-                    <p>I must explain to you how all this mistaken denouncing pleure and praising pain </p>
+           @foreach (Service service in Model.Services)
+            {
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-service">
+                        <h3><a href="teacher.html">@service.Name</a></h3>
+                        <p>@service.Description </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-service">
-                    <h3><a href="teacher.html">PROFESSIONAL TEACHER</a></h3>
-                    <p>I must explain to you how all this mistaken denouncing pleure and praising pain </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-service">
-                    <h3><a href="teacher.html">PROFESSIONAL TEACHER</a></h3>
-                    <p>I must explain to you how all this mistaken denouncing pleure and praising pain </p>
-                </div>
-            </div>
+
+            }
         </div>
     </div>
 </div>
@@ -103,15 +58,14 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="about-content">
-                    <h2>WELCOME TO <span>EDUHOME</span></h2>
-                    <p>I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings  the master-builder of humanit happiness</p>
-                    <p class="hidden-sm">I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system</p>
+                    <h2>@Html.Raw(Model.About.Title)</h2>
+                   @Html.Raw(Model.About.Description)
                     <a class="default-btn" href="about.html">view courses</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="about-img">
-                    <img src="~/img/about/about.png" alt="about">
+                    <img src="~/img/about/@Model.About.Image" alt="about">
                 </div>
             </div>
         </div>
@@ -130,57 +84,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-course">
-                    <div class="course-img">
-                        <a href="course-details.html">
-                            <img src="~/img/course/course1.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">CSE ENGINEERING</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-course">
-                    <div class="course-img">
-                        <a href="course-details.html">
-                            <img src="~/img/course/course2.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">political science</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
+           @foreach (Course course in Model.Courses)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a href="course-details.html">
+                                <img src="~/img/course/@course.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html">@course.Name</a></h3>
+                            <p>@course.Description</p>
+                            <a class="default-btn" href="course-details.html">read more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 hidden-sm col-xs-12">
-                <div class="single-course">
-                    <div class="course-img">
-                        <a href="course-details.html">
-                            <img src="~/img/course/course3.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">micro biology</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
@@ -329,12 +252,11 @@
                     <div class="single-testimonial">
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="~/img/testimonial/testimonial.jpg" alt="testimonial">
+                                <img src="~/img/testimonial/@Model.Feedback.Image" alt="testimonial">
                             </div>
                             <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
+                                <p>@Model.Feedback.Description</p>
+                                @Model.Feedback.Name
                             </div>
                         </div>
                     </div>
@@ -356,63 +278,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="~/img/blog/blog1.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
+          @foreach (Blog blog in Model.Blogs)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="~/img/blog/@blog.Image" alt="blog"></a>
+                            <div class="blog-hover">
+                                <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="~/img/blog/blog2.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
+                        <div class="blog-content">
+                            <div class="blog-top">
+                                <p>@blog.By  /  @blog.CreateTime.ToString("MMMM dd,yyyy")  /  <i class="fa fa-comments-o"></i> 4</p>
+                            </div>
+                            <div class="blog-bottom">
+                                <h2><a href="blog-details.html">@blog.Title </a></h2>
+                                <a href="blog-details.html">read more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 hidden-sm col-xs-12">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="~/img/blog/blog3.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

@@ -1,5 +1,8 @@
-﻿using EduHome.Models;
+﻿using EduHome.DAL;
+using EduHome.Models;
+using EduHome.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,11 +14,24 @@ namespace EduHome.Controllers
 {
     public class HomeController : Controller
     {
-       
-
-        public IActionResult Index()
+        private readonly AppDbContext _db;
+        public HomeController(AppDbContext db)
         {
-            return View();
+            _db = db;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            HomeVM homeVM = new ()
+            {
+                Sliders = await _db.Sliders.ToListAsync(),
+                Services = await _db.Services.ToListAsync(),
+                Courses = await _db.Courses.Take(3).ToListAsync(),
+                Blogs = await _db.Blogs.Take(3).ToListAsync(),
+                About = await _db.About.FirstOrDefaultAsync(),
+                Feedback = await _db.Feedback.FirstOrDefaultAsync(),
+            };
+            return View(homeVM);
         }
 
         public IActionResult Error()
@@ -23,6 +39,6 @@ namespace EduHome.Controllers
             return View();
         }
 
-       
+
     }
 }
