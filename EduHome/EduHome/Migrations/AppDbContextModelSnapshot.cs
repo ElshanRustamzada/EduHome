@@ -106,6 +106,51 @@ namespace EduHome.Migrations
                     b.ToTable("Feedback");
                 });
 
+            modelBuilder.Entity("EduHome.Models.Footer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterLogo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Footer");
+                });
+
+            modelBuilder.Entity("EduHome.Models.Header", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("HeaderLogo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HeaderNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Header");
+                });
+
             modelBuilder.Entity("EduHome.Models.Service", b =>
                 {
                     b.Property<int>("Id")
