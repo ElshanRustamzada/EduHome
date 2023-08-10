@@ -26,10 +26,6 @@ namespace EduHome.Controllers
             {
                 Sliders = await _db.Sliders.ToListAsync(),
                 Services = await _db.Services.ToListAsync(),
-                Courses = await _db.Courses.Take(3).ToListAsync(),
-                Blogs = await _db.Blogs.Take(3).ToListAsync(),
-                About = await _db.About.FirstOrDefaultAsync(),
-                Feedback = await _db.Feedback.FirstOrDefaultAsync(),
             };
             return View(homeVM);
         }

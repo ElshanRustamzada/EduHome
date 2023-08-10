@@ -7,7 +7,7 @@
 <!-- Background Area Start -->
 <section id="slider-container" class="slider-area two">
     <div class="slider-owl owl-theme owl-carousel">
-      @foreach (Slider slider in Model.Sliders)
+        @foreach (Slider slider in Model.Sliders)
         {
             <!-- Start Slingle Slide -->
             <div class="single-slide item" style="background-image: url(../img/slider/@slider.Image)">
@@ -38,7 +38,7 @@
 <div class="service-area two pt-150 pb-150">
     <div class="container">
         <div class="row">
-           @foreach (Service service in Model.Services)
+            @foreach (Service service in Model.Services)
             {
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="single-service">
@@ -53,24 +53,8 @@
 </div>
 <!-- Service End -->
 <!-- About Start -->
-<div class="about-area pb-155">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="about-content">
-                    <h2>@Html.Raw(Model.About.Title)</h2>
-                   @Html.Raw(Model.About.Description)
-                    <a class="default-btn" href="about.html">view courses</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="about-img">
-                    <img src="~/img/about/@Model.About.Image" alt="about">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("About")
+
 <!-- About End -->
 <!-- Courses Area Start -->
 <div class="courses-area two pt-150 pb-150 text-center">
@@ -84,26 +68,8 @@
             </div>
         </div>
         <div class="row">
-           @foreach (Course course in Model.Courses)
-            {
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course">
-                        <div class="course-img">
-                            <a href="course-details.html">
-                                <img src="~/img/course/@course.Image" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="course-details.html">@course.Name</a></h3>
-                            <p>@course.Description</p>
-                            <a class="default-btn" href="course-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            }
+            @await Component.InvokeAsync("Courses",new {take=3})
+
         </div>
     </div>
 </div>
@@ -244,27 +210,7 @@
 </div>
 <!-- Event Area End -->
 <!-- Testimonial Area Start -->
-<div class="testimonial-area pt-110 pb-105 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-md-8 col-md-offset-2 col-sm-12">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="~/img/testimonial/@Model.Feedback.Image" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>@Model.Feedback.Description</p>
-                                @Model.Feedback.Name
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("Feedback")
 <!-- Testimonial Area End -->
 <!-- Blog Area Start -->
 <div class="blog-area pt-150 pb-150">
@@ -278,28 +224,8 @@
             </div>
         </div>
         <div class="row">
-          @foreach (Blog blog in Model.Blogs)
-            {
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="blog-details.html"><img src="~/img/blog/@blog.Image" alt="blog"></a>
-                            <div class="blog-hover">
-                                <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-top">
-                                <p>@blog.By  /  @blog.CreateTime.ToString("MMMM dd,yyyy")  /  <i class="fa fa-comments-o"></i> 4</p>
-                            </div>
-                            <div class="blog-bottom">
-                                <h2><a href="blog-details.html">@blog.Title </a></h2>
-                                <a href="blog-details.html">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
+            @await Component.InvokeAsync("Blogs",new {take=3})
+
         </div>
     </div>
 </div>
