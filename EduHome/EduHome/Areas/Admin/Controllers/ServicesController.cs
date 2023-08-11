@@ -3,6 +3,7 @@ using EduHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EduHome.Areas.Admin.Controllers
@@ -88,6 +89,7 @@ namespace EduHome.Areas.Admin.Controllers
         }
         #endregion
 
+        #region Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -119,5 +121,23 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region Detail
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
+            return View(dbservice);
+        } 
+        #endregion
+
     }
 }
