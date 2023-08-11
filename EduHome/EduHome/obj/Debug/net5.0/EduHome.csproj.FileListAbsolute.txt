@@ -202,3 +202,12 @@ C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\V
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Courses\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Blogs\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Feedback\Default.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Index.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Create.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Index.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Update.cshtml.g.cs
