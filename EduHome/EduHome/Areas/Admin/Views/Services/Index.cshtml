@@ -11,6 +11,7 @@
                 <thead>
                     <tr>
                         <th class="text-dark font-weight-bold">Name</th>
+                        <th class="text-dark font-weight-bold">Status</th>
                         <th class="text-dark font-weight-bold" style="text-align:end">Actions</th>
                     </tr>
                 </thead>
@@ -19,10 +20,20 @@
                     {
                         <tr>
                             <td>@item.Name</td>
+                            <td>
+                                @if(!item.IsDeactive)
+                                {
+                                    <span class="btn btn-primary">Aktiv</span>
+                                }
+                                else
+                                {
+                                    <span class="btn btn-danger">Passiv</span>
+                                }
+                            </td>
                             <td class="d-flex justify-content-end">
-                                <a class="btn btn-warning text-white mr-2">Detail</a>
-                                <a class="btn btn-info text-white mr-2">Update</a>
-                                <a class="btn btn-danger text-white mr-2">Delete</a>
+                                <a class="btn btn-warning text-white mr-2" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
+                                <a class="btn btn-info text-white mr-2" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                                <a class="btn btn-danger text-white mr-2" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                             </td>
 
                         </tr>

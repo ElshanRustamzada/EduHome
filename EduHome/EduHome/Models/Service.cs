@@ -8,6 +8,7 @@ namespace EduHome.Models
         [Required(ErrorMessage = "don't null")]
         public string Name { get; set; }
         public string Description { get; set; }
+        public bool IsDeactive { get; set; }
 
     }
 }

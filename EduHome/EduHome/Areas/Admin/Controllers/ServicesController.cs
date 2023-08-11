@@ -20,8 +20,10 @@ namespace EduHome.Areas.Admin.Controllers
             List<Service> services = await _db.Services.ToListAsync();
             return View(services);
         }
+
+        #region Create
         public IActionResult Create()
-        { 
+        {
             return View();
         }
         [HttpPost]
@@ -41,16 +43,37 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-        public IActionResult Update(int? id)
+        #endregion
+
+        #region Update
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
+            return View(dbservice);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id,Service service)
+        public async Task<IActionResult> Update(int? id, Service service)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
             #region Is Exist
-            bool isExist = await _db.Services.AnyAsync(x => x.Name == service.Name);
+            bool isExist = await _db.Services.AnyAsync(x => x.Name == service.Name && x.Id != id);
             if (isExist)
             {
                 ModelState.AddModelError("Name", "This service is already exist");
@@ -58,7 +81,41 @@ namespace EduHome.Areas.Admin.Controllers
             }
             #endregion
 
-            await _db.Services.AddAsync(service);
+            dbservice.Name = service.Name;
+            dbservice.Description = service.Description;
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+        #endregion
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
+            return View(dbservice);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
+            dbservice.IsDeactive = true;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
