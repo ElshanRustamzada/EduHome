@@ -29,14 +29,6 @@ namespace EduHome.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Slider slider)
         {
-            #region isExist
-            bool isExist = await _db.Sliders.AnyAsync(x => x.Name == slider.Name);
-            if (isExist)
-            {
-                ModelState.AddModelError("Name", "This slider is already exist");
-                return View();
-            } 
-            #endregion
 
             await _db.Sliders.AddAsync(slider);
             await _db.SaveChangesAsync();
