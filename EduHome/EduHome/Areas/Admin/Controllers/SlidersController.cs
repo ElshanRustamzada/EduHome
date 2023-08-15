@@ -1,10 +1,12 @@
 ﻿using EduHome.DAL;
+using EduHome.Helpers;
 using EduHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Extensions = EduHome.Helpers.Extensions;
 
 namespace EduHome.Areas.Admin.Controllers
 {
@@ -29,7 +31,16 @@ namespace EduHome.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Slider slider)
         {
-
+            if (slider.Photo == null)
+            {
+                ModelState.AddModelError("Photo", "Image can not be null");
+                return View();
+            }
+            if (!slider.Photo.IsImage())
+            {
+                ModelState.AddModelError("Photo", "Please select image type");
+                return View();
+            }
             await _db.Sliders.AddAsync(slider);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
