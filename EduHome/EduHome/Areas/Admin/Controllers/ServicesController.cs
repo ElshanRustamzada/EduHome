@@ -123,6 +123,31 @@ namespace EduHome.Areas.Admin.Controllers
         }
         #endregion
 
+        #region Activity
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbservice == null)
+            {
+                return BadRequest();
+            }
+            if (!dbservice.IsDeactive)
+            {
+                dbservice.IsDeactive = true;
+            }
+            else
+            {
+                dbservice.IsDeactive = false;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        } 
+        #endregion
+
         #region Detail
         public async Task<IActionResult> Detail(int? id)
         {

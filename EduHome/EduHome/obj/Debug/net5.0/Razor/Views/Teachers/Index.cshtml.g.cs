@@ -40,8 +40,15 @@ using EduHome.ViewComponents;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\Views\_ViewImports.cshtml"
+using EduHome.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e680643", @"/Views/Teachers/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"40144df05a1270a0a9335713e6452c58e71b55e1db840c5b7acdbf1a2e94f579", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"c008178bec13b2908503b9f52803e8ac651ec2ca5e8e263a44646f0617648247", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Teachers_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -118,7 +125,7 @@ using EduHome.ViewComponents;
                 <div class=""single-teacher mb-45"">
                     <div class=""single-teacher-img"">
                         <a href=""teacher-details.html"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e6806439531", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e6806439717", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -151,7 +158,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                       ");
             WriteLiteral("  <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064311782", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064311968", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -184,7 +191,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                     ");
             WriteLiteral("    <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064314036", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064314222", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -217,7 +224,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                      ");
             WriteLiteral("   <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064316289", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064316475", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -250,7 +257,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                       ");
             WriteLiteral("  <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064318541", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064318727", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -283,7 +290,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                        ");
             WriteLiteral(" <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064320792", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064320978", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -316,7 +323,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                     ");
             WriteLiteral("    <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064323046", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064323232", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -349,7 +356,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                      ");
             WriteLiteral("   <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064325299", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064325485", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -382,7 +389,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                       ");
             WriteLiteral("  <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064327551", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064327737", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -415,7 +422,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                       ");
             WriteLiteral("  <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064329803", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064329989", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -448,7 +455,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                       ");
             WriteLiteral("  <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064332056", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064332242", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -481,7 +488,7 @@ using EduHome.ViewComponents;
                     <div class=""single-teacher-img"">
                      ");
             WriteLiteral("   <a href=\"teacher-details.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064334310", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c664de7fd585e65d7fff9f9c231cd03e76e83ceddd60f358c90505187e68064334496", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
