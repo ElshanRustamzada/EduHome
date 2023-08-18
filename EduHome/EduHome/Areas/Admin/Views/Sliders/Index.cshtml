@@ -20,7 +20,9 @@
                     @foreach (Slider item in Model)
                     {
                         <tr>
-                            <td><img src="~/img/slider/@item.Image" style="width:200px;height:80px;object-fit:cover"/></td>
+                            <td>
+                                <img src="~/img/slider/@item.Image" style="width:200px;height:80px;object-fit:cover" />
+                            </td>
                             <td>@item.Name</td>
                             <td>
                                 @if (!item.IsDeactive)
@@ -35,7 +37,13 @@
                             <td class="d-flex justify-content-end">
                                 <a class="btn btn-warning text-white mr-2" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
                                 <a class="btn btn-info text-white mr-2" asp-action="Update" asp-route-id="@item.Id">Update</a>
-                                <a class="btn btn-danger text-white mr-2" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                               @if(item.IsDeactive){
+                                    <a class="btn btn-success text-white mr-2" asp-action="Activity" asp-route-id="@item.Id" style="width:112px">Activited</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-danger text-white mr-2" asp-action="Activity" asp-route-id="@item.Id" style="width:112px">DeActivited</a>
+                                }
                             </td>
 
                         </tr>

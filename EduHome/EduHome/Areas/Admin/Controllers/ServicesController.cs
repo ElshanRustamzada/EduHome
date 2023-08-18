@@ -53,12 +53,12 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
-            return View(dbservice);
+            return View(dbService);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -68,8 +68,8 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
@@ -82,8 +82,8 @@ namespace EduHome.Areas.Admin.Controllers
             }
             #endregion
 
-            dbservice.Name = service.Name;
-            dbservice.Description = service.Description;
+            dbService.Name = service.Name;
+            dbService.Description = service.Description;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -96,12 +96,12 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
-            return View(dbservice);
+            return View(dbService);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -112,12 +112,12 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
-            dbservice.IsDeactive = true;
+            dbService.IsDeactive = true;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -130,18 +130,18 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
-            if (!dbservice.IsDeactive)
+            if (!dbService.IsDeactive)
             {
-                dbservice.IsDeactive = true;
+                dbService.IsDeactive = true;
             }
             else
             {
-                dbservice.IsDeactive = false;
+                dbService.IsDeactive = false;
             }
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -155,12 +155,12 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Service dbservice = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
-            if (dbservice == null)
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
             {
                 return BadRequest();
             }
-            return View(dbservice);
+            return View(dbService);
         } 
         #endregion
 

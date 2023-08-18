@@ -22,10 +22,10 @@ namespace EduHome.Controllers
 
         public async Task<IActionResult> Index()
         {
-            HomeVM homeVM = new ()
+            HomeVM homeVM = new()
             {
-                Sliders = await _db.Sliders.ToListAsync(),
-                Services = await _db.Services.Where(x=>!x.IsDeactive).ToListAsync(),
+                Sliders = await _db.Sliders.Where(x => !x.IsDeactive).ToListAsync(),
+                Services = await _db.Services.Where(x => !x.IsDeactive).ToListAsync(),
             };
             return View(homeVM);
         }
