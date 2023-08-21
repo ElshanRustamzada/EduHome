@@ -215,3 +215,4 @@ C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\A
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Detail.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Create.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Update.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Detail.cshtml.g.cs
