@@ -8,16 +8,19 @@
         <div class="card-body">
 
             <form method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label asp-for="Photo"></label>
+
+                <div class="form-group" >
+                    <label asp-for="Photo" ></label>
                     <input asp-for="Photo" accept="image/*" class="form-control">
                     <span class="text-danger" asp-validation-for="Photo"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Name"></label>
                     <input asp-for="Name" class="form-control">
                     <span class="text-danger" asp-validation-for="Name"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Description">Description</label>
                     <textarea asp-for="Description" class="form-control" rows="3"></textarea>

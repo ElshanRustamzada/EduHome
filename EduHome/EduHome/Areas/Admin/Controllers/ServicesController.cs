@@ -2,6 +2,7 @@
 using EduHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +17,11 @@ namespace EduHome.Areas.Admin.Controllers
         {
             _db = db;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            List<Service> services = await _db.Services.ToListAsync();
+            decimal take = 6;
+            ViewBag.PageCount = Math.Ceiling((await _db.Services.CountAsync()/take));
+            List<Service> services = await _db.Services.OrderByDescending(x=>x.Id).Take((int)take).ToListAsync();
             return View(services);
         }
 

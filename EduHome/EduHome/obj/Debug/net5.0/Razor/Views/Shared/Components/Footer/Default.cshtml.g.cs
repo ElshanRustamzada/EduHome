@@ -40,15 +40,8 @@ using EduHome.ViewComponents;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 5 "C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\Views\_ViewImports.cshtml"
-using EduHome.Helpers;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"83736f709374462bf5a8d72b7837569e49d2edd7ee25b590745c0da51f2ea0d6", @"/Views/Shared/Components/Footer/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"c008178bec13b2908503b9f52803e8ac651ec2ca5e8e263a44646f0617648247", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"715aff8afd0b78c8c85bfce44101158d535d8404c5188b985fc202944599b1d8", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_Components_Footer_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Footer>
     #nullable disable
@@ -90,8 +83,8 @@ using EduHome.Helpers;
                     <div class=""single-widget pr-60"">
                         <div class=""footer-logo pb-25"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83736f709374462bf5a8d72b7837569e49d2edd7ee25b590745c0da51f2ea0d65359", async() => {
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "83736f709374462bf5a8d72b7837569e49d2edd7ee25b590745c0da51f2ea0d65599", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83736f709374462bf5a8d72b7837569e49d2edd7ee25b590745c0da51f2ea0d65173", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "83736f709374462bf5a8d72b7837569e49d2edd7ee25b590745c0da51f2ea0d65413", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

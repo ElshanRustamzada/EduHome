@@ -9,7 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Extensions = EduHome.Helpers.Extensions;
 
 namespace EduHome.Areas.Admin.Controllers
 {
@@ -51,11 +50,11 @@ namespace EduHome.Areas.Admin.Controllers
             }
             if (slider.Photo.IsOrder1Mb())
             {
-                ModelState.AddModelError("Photo", "max 1mb");
+                ModelState.AddModelError("Photo", "Max 1Mb");
                 return View();
             }
             string folder = Path.Combine(_env.WebRootPath, "img", "slider");
-            slider.Image = await slider.Photo.SaveFileAsync(folder); 
+            slider.Image = await slider.Photo.SaveFileAsync(folder);
             #endregion
 
             await _db.Sliders.AddAsync(slider);
@@ -81,7 +80,7 @@ namespace EduHome.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id,Slider slider)
+        public async Task<IActionResult> Update(int? id, Slider slider)
         {
             if (id == null)
             {
@@ -93,7 +92,6 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return BadRequest();
             }
-
             #region Save Image
             if (slider.Photo != null)
             {
@@ -104,18 +102,17 @@ namespace EduHome.Areas.Admin.Controllers
                 }
                 if (slider.Photo.IsOrder1Mb())
                 {
-                    ModelState.AddModelError("Photo", "max 1mb");
+                    ModelState.AddModelError("Photo", "Max 1Mb");
                     return View();
                 }
                 string folder = Path.Combine(_env.WebRootPath, "img", "slider");
-                string path = Path.Combine(folder,dbSlider.Image);
+                string path = Path.Combine(folder, dbSlider.Image);
                 if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);
                 }
                 dbSlider.Image = await slider.Photo.SaveFileAsync(folder);
             }
-           
             #endregion
 
             dbSlider.Name = slider.Name;

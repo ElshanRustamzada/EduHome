@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using EduHome.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,11 +20,12 @@ namespace EduHome.Helpers
         {
             string filename = Guid.NewGuid().ToString() + file.FileName;
             string path = Path.Combine(folder, filename);
-            using (FileStream fileStream = new (path, FileMode.Create))
+            using (FileStream fileStream = new(path, FileMode.Create))
             {
-                await file.CopyToAsync(fileStream);
+               await file.CopyToAsync(fileStream);
             }
             return filename;
+
         }
     }
 }

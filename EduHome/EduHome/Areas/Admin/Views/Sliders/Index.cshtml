@@ -21,7 +21,7 @@
                     {
                         <tr>
                             <td>
-                                <img src="~/img/slider/@item.Image" style="width:200px;height:80px;object-fit:cover" />
+                                <img src="~/img/slider/@item.Image" style="height:110px;width:230px;object-fit:cover"/>
                             </td>
                             <td>@item.Name</td>
                             <td>
@@ -37,7 +37,8 @@
                             <td class="d-flex justify-content-end">
                                 <a class="btn btn-warning text-white mr-2" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
                                 <a class="btn btn-info text-white mr-2" asp-action="Update" asp-route-id="@item.Id">Update</a>
-                               @if(item.IsDeactive){
+                                @if (item.IsDeactive)
+                                {
                                     <a class="btn btn-success text-white mr-2" asp-action="Activity" asp-route-id="@item.Id" style="width:112px">Activited</a>
                                 }
                                 else
