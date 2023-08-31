@@ -17,11 +17,12 @@ namespace EduHome.Areas.Admin.Controllers
         {
             _db = db;
         }
-        public async Task<IActionResult> Index(int page=1)
+        public async Task<IActionResult> Index(int page = 1)
         {
-            decimal take = 6;
-            ViewBag.PageCount = Math.Ceiling((await _db.Services.CountAsync()/take));
-            List<Service> services = await _db.Services.OrderByDescending(x=>x.Id).Take((int)take).ToListAsync();
+            ViewBag.CurrentPage = page; 
+            int take = 3;
+            ViewBag.PageCount = Math.Ceiling((decimal)(await _db.Services.CountAsync()) / take);
+            List<Service> services = await _db.Services.OrderByDescending(x => x.Id).Skip((page-1)*take).Take(take).ToListAsync();
             return View(services);
         }
 
@@ -148,7 +149,7 @@ namespace EduHome.Areas.Admin.Controllers
             }
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
-        } 
+        }
         #endregion
 
         #region Detail
@@ -164,7 +165,7 @@ namespace EduHome.Areas.Admin.Controllers
                 return BadRequest();
             }
             return View(dbService);
-        } 
+        }
         #endregion
 
     }
