@@ -92,6 +92,7 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 return BadRequest();
             }
+
             #region Save Image
             if (slider.Photo != null)
             {
@@ -106,6 +107,7 @@ namespace EduHome.Areas.Admin.Controllers
                     return View();
                 }
                 string folder = Path.Combine(_env.WebRootPath, "img", "slider");
+                //Sekil silmenin kodu
                 string path = Path.Combine(folder, dbSlider.Image);
                 if (System.IO.File.Exists(path))
                 {

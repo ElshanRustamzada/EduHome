@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Courses";
 }
+@model List<Course>
 
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
@@ -36,7 +37,32 @@
             </div>
         </div>
         <div class="row">
-            @await Component.InvokeAsync("Courses",new {take=9})
+          @foreach (Course course in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course mb-70">
+                        <div class="course-img">
+                            <a href="course-details.html">
+                                <img src="img/course/@course.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html">@course.Name</a></h3>
+                            <p>@course.Description</p>
+                            <a class="default-btn" href="course-details.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+            }
+           
+        </div>
+        <div class="row" style="display:flex;justify-content:center">
+            <div class="col-12">
+                <a class="default-btn text-white">Load More</a>
+            </div>
         </div>
     </div>
 </div>

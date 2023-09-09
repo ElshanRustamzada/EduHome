@@ -50,7 +50,15 @@
 
             <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
                 <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+                    @if (ViewBag.CurrentPage != 1)
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@(ViewBag.CurrentPage-1)">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@ViewBag.PageCount">Previous</a></li>
+                    }
 
                     @for (int i = 1; i <= ViewBag.PageCount; i++)
                     {
@@ -66,7 +74,16 @@
 
                     }
 
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    @if (ViewBag.CurrentPage != ViewBag.PageCount)
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@(ViewBag.CurrentPage+1)">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="1">Next</a></li>
+                    }
+
+
                 </ul>
             </nav>
 

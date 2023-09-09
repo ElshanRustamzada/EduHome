@@ -26,6 +26,7 @@ namespace EduHome.Controllers
             {
                 Sliders = await _db.Sliders.Where(x => !x.IsDeactive).ToListAsync(),
                 Services = await _db.Services.Where(x => !x.IsDeactive).ToListAsync(),
+                Courses = await _db.Courses.Take(6).ToListAsync(),
             };
             return View(homeVM);
         }
