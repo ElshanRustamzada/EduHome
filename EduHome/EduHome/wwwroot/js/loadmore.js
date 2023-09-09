@@ -1,10 +1,10 @@
 ﻿
-$(document).on("click", "#LoadMore", function () {
+$(document).on("click", "#loadMore", function () {
     $.ajax({
-        url: "/Courses/Test/",
+        url: "/Courses/LoadMore/",
         type:"get",
-        success: function (html) {
-            console.log("Salam")
+        success: function (res) {
+            console.log(res)
         }
     });
 });

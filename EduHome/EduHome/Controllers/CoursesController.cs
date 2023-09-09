@@ -1,4 +1,5 @@
-﻿using EduHome.DAL;
+﻿using AspNetCore;
+using EduHome.DAL;
 using EduHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,12 @@ namespace EduHome.Controllers
         {
             List<Course> courses = await _db.Courses.OrderByDescending(x => x.Id).Take(6).ToListAsync();
             return View(courses);
+        }
+        public async Task<IActionResult> LoadMore()
+        {
+            List<Course> courses = await _db.Courses.OrderByDescending(x => x.Id).Skip(6).Take(6).ToListAsync();
+
+            return PartialView("", courses);
         }
     }
 }
