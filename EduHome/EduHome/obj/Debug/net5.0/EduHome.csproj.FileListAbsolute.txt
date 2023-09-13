@@ -199,7 +199,6 @@ C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\bin\Debug\net5.0\runtime
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\About\Default.cshtml.g.cs
-C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Courses\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Blogs\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Feedback\Default.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
@@ -216,3 +215,4 @@ C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\A
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Create.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Update.cshtml.g.cs
 C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Detail.cshtml.g.cs
+C:\Users\elsha\OneDrive\Desktop\EduHome\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\_CoursesLoadMorePartial.cshtml.g.cs
