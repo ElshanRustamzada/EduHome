@@ -19,10 +19,10 @@ namespace EduHome.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index(int page = 1)
         {
-            ViewBag.CurrentPage = page; 
-            int take = 3;
+            ViewBag.CurrentPage = page;
+            int take = 5;
             ViewBag.PageCount = Math.Ceiling((decimal)(await _db.Services.CountAsync()) / take);
-            List<Service> services = await _db.Services.OrderByDescending(x => x.Id).Skip((page-1)*take).Take(take).ToListAsync();
+            List<Service> services = await _db.Services.OrderByDescending(x => x.Id).Skip((page - 1) * take).Take(take).ToListAsync();
             return View(services);
         }
 
