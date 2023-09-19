@@ -27,19 +27,17 @@ namespace EduHome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
             services.AddIdentity<AppUser, IdentityRole>(IdentityOptions =>
             {
-                IdentityOptions.User.RequireUniqueEmail = true;
                 IdentityOptions.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
+                IdentityOptions.User.RequireUniqueEmail = true;
                 IdentityOptions.Password.RequireNonAlphanumeric = false;
-                IdentityOptions.Password.RequiredUniqueChars = 0;
                 IdentityOptions.Password.RequiredLength = 8;
+                IdentityOptions.Password.RequireDigit = true;
                 IdentityOptions.Lockout.AllowedForNewUsers = true;
                 IdentityOptions.Lockout.MaxFailedAccessAttempts = 5;
                 IdentityOptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
-
             services.AddDbContext<AppDbContext>(option =>
             { option.UseSqlServer(_config.GetConnectionString("Default")); });
         }

@@ -159,33 +159,6 @@ namespace EduHome.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("EduHome.Models.Event", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("EventCity")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EventImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("EventTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeactive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Events");
-                });
-
             modelBuilder.Entity("EduHome.Models.Feedback", b =>
                 {
                     b.Property<int>("Id")
