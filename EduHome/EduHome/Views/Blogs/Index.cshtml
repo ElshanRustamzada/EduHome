@@ -1,7 +1,8 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Blogs";
 }
+
+@model List<Blog>
 
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
@@ -21,6 +22,72 @@
 </div>
 <!-- Banner Area End -->
 <!-- Blog Start -->
-@await Component.InvokeAsync("Blogs")
-<!-- Blog End -->
+<div class="blog-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @foreach (Blog blog in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-img">
+                            <a href="blog-details.html"><img src="~/img/blog/@blog.Image" alt="blog"></a>
+                            <div class="blog-hover">
+                                <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-top">
+                                <p>@blog.By  /  @blog.CreateTime.ToString("MMMM dd,yyyy")  /  <i class="fa fa-comments-o"></i> 4</p>
+                            </div>
+                            <div class="blog-bottom">
+                                <h2><a href="blog-details.html">@blog.Title </a></h2>
+                                <a href="blog-details.html">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div style="display:flex;justify-content:center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
 
+                    @if (ViewBag.CurrentPage != 1)
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@(ViewBag.CurrentPage-1)">Previous</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@ViewBag.PageCount">Previous</a></li>
+                    }
+
+                    @for (int i = 1; i <= ViewBag.PageCount; i++)
+                    {
+                        if (ViewBag.CurrentPage == i)
+                        {
+                            <li class="page-item disabled"><a class="page-link bg-dark text-white">@i</a></li>
+                        }
+                        else
+                        {
+                            <li class="page-item"><a class="page-link" asp-route-page="@i">@i</a></li>
+
+                        }
+
+                    }
+
+                    @if (ViewBag.CurrentPage != ViewBag.PageCount)
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="@(ViewBag.CurrentPage+1)">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" asp-route-page="1">Next</a></li>
+                    }
+
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->

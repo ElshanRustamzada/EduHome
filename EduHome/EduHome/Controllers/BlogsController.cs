@@ -11,9 +11,20 @@ namespace EduHome.Controllers
 {
     public class BlogsController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _db;
+        public BlogsController(AppDbContext db)
         {
-            return View();
+            _db = db;
         }
+        public async Task<IActionResult> Index(int page = 1)
+        {
+            ViewBag.CurrentPage = page;
+            int take = 6;
+            ViewBag.PageCount = Math.Ceiling((decimal)(await _db.Blogs.CountAsync()) / take);
+            List<Blog> blogs = await _db.Blogs.OrderByDescending(x => x.Id).Skip((page - 1) * take).Take(take).ToListAsync();
+            return View(blogs);
+        }
+
     }
 }
+
