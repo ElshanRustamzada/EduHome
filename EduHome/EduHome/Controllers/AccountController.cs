@@ -13,13 +13,14 @@ namespace EduHome.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         public AccountController(UserManager<AppUser> userManager,
-                                 RoleManager<IdentityRole> roleManager,   
-                                 SignInManager<AppUser> signInManager )
+                                 RoleManager<IdentityRole> roleManager,
+                                 SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
         }
+
         #region Login
         public IActionResult Login()
         {
@@ -30,9 +31,9 @@ namespace EduHome.Controllers
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
             AppUser user = await _userManager.FindByNameAsync(loginVM.Username);
-            if(user == null)
+            if (user == null)
             {
-                ModelState.AddModelError("","Username or Password is wrong");
+                ModelState.AddModelError("", "Username or Password is wrong");
                 return View();
             }
             if (user.IsDeactive)
@@ -40,7 +41,17 @@ namespace EduHome.Controllers
                 ModelState.AddModelError("", "Your Account is deactive");
                 return View();
             }
-            await _signInManager.PasswordSignInAsync(user,loginVM.Password,loginVM.IsRemember,true);
+            Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.IsRemember, true);
+            if (signInResult.IsLockedOut)
+            {
+                ModelState.AddModelError("", "Your Account is blocked");
+                return View();
+            }
+            if (!signInResult.Succeeded)
+            {
+                ModelState.AddModelError("", "Username or Password is wrong");
+                return View();
+            }
             return RedirectToAction("Index", "Home");
         }
 
@@ -71,7 +82,7 @@ namespace EduHome.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(newUser, Roles.Admin.ToString());
+            await _userManager.AddToRoleAsync(newUser, Roles.Member.ToString());
             await _signInManager.SignInAsync(newUser, registerVM.IsRemember);
             return RedirectToAction("Index", "Home");
         }
@@ -82,7 +93,7 @@ namespace EduHome.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
-        } 
+        }
         #endregion
 
         #region Create Roles

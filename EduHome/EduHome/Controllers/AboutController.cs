@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
+using System.Net;
+using System;
 
 namespace EduHome.Controllers
 {
@@ -9,4 +12,6 @@ namespace EduHome.Controllers
             return View();
         }
     }
+
 }
+
