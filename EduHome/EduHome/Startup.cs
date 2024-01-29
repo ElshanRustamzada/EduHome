@@ -27,6 +27,10 @@ namespace EduHome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<AppDbContext>(option =>
+            {
+                option.UseSqlServer(_config.GetConnectionString("Default"));
+            });
             services.AddIdentity<AppUser, IdentityRole>(IdentityOptions =>
             {
                 IdentityOptions.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._";
@@ -38,8 +42,7 @@ namespace EduHome
                 IdentityOptions.Lockout.MaxFailedAccessAttempts = 5;
                 IdentityOptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
-            services.AddDbContext<AppDbContext>(option =>
-            { option.UseSqlServer(_config.GetConnectionString("Default")); });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

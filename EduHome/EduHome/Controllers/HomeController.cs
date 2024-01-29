@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace EduHome.Controllers
@@ -37,6 +39,6 @@ namespace EduHome.Controllers
             return View();
         }
 
-
+        
     }
 }

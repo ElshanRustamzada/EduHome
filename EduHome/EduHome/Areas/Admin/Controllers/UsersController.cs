@@ -146,6 +146,7 @@ namespace EduHome.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(string id, UpdateVM updateVM, string role)
         {
+
             #region Get
             if (id == null)
             {
@@ -204,5 +205,6 @@ namespace EduHome.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
         #endregion
+
     }
 }
