@@ -309,19 +309,44 @@ namespace EduHome.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Adress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FooterLogo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FooterNumber")
+                    b.Property<string>("FooterNumber1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterNumber2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InfoSite")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PinterestUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubscribeSubTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubscribeTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TwitterUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VcontactUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -340,6 +365,9 @@ namespace EduHome.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HeaderNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HeaderQuestionText")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
